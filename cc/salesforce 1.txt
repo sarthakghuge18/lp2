@@ -1,0 +1,15 @@
+public class VariableExample {
+    public static void showDataTypes() {
+        String name = 'Sarthak';
+        Integer age = 22;
+        Boolean isActive = true;
+        Decimal balance = 1000.50;
+        Date today = Date.today();
+
+        System.debug('Name: ' + name);
+        System.debug('Age: ' + age);
+        System.debug('Is Active: ' + isActive);
+        System.debug('Balance: ' + balance);
+        System.debug('Today\'s Date: ' + today);
+    }
+}
