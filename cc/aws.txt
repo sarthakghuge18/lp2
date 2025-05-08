@@ -12,28 +12,114 @@ sudo nano index.html
 index.html
 
 
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Simple Addition</title>
+  <meta charset="UTF-8">
+  <title>Pastel Calculator</title>
+  <style>
+    body {
+      background-color: #fdf6f0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #fff6fa;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(150, 150, 150, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #a88cc9;
+      margin-bottom: 20px;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    input, select {
+      background-color: #ffeef5;
+    }
+
+    button {
+      background-color: #c3e6cb;
+      color: #333;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #b2dfdb;
+    }
+
+    .result {
+      margin-top: 15px;
+      color: #6d6875;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <h2>Add Two Numbers</h2>
-
+  <div class="container">
+    <h1>Simple Calculator</h1>
     <input type="number" id="num1" placeholder="Enter first number">
     <input type="number" id="num2" placeholder="Enter second number">
-    <button onclick="addNumbers()">Add</button>
+    
+    <select id="operation">
+      <option value="add">Addition (+)</option>
+      <option value="subtract">Subtraction (−)</option>
+      <option value="multiply">Multiplication (×)</option>
+      <option value="divide">Division (÷)</option>
+    </select>
 
-    <p id="result"></p>
+    <button onclick="calculate()">Calculate</button>
 
-    <script>
-        function addNumbers() {
-            let a = parseFloat(document.getElementById("num1").value);
-            let b = parseFloat(document.getElementById("num2").value);
-            let sum = a + b;
-            document.getElementById("result").innerText = "The sum is: " + sum;
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function calculate() {
+      const num1 = parseFloat(document.getElementById("num1").value);
+      const num2 = parseFloat(document.getElementById("num2").value);
+      const operation = document.getElementById("operation").value;
+      let result;
+
+      if (isNaN(num1) || isNaN(num2)) {
+        result = "Please enter valid numbers.";
+      } else {
+        switch (operation) {
+          case "add":
+            result = num1 + num2;
+            break;
+          case "subtract":
+            result = num1 - num2;
+            break;
+          case "multiply":
+            result = num1 * num2;
+            break;
+          case "divide":
+            result = num2 !== 0 ? (num1 / num2).toFixed(2) : "Cannot divide by zero";
+            break;
         }
-    </script>
+      }
+
+      document.getElementById("result").textContent = Result: ${result};
+    }
+  </script>
 </body>
 </html>
 
