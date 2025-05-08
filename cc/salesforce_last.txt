@@ -1,0 +1,11 @@
+
+object manager
+select object or create object 
+
+add field to object in field and relationship
+
+then add the tab
+
+then app manager
+
+then search for app
