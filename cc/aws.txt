@@ -8,6 +8,38 @@ sudo systemctl status httpd
 cd /var/www/html
 sudo nano index.html
 
+//////////////////////////////////////////////////////////////
+index.html
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Addition</title>
+</head>
+<body>
+    <h2>Add Two Numbers</h2>
+
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <button onclick="addNumbers()">Add</button>
+
+    <p id="result"></p>
+
+    <script>
+        function addNumbers() {
+            let a = parseFloat(document.getElementById("num1").value);
+            let b = parseFloat(document.getElementById("num2").value);
+            let sum = a + b;
+            document.getElementById("result").innerText = "The sum is: " + sum;
+        }
+    </script>
+</body>
+</html>
+
+
+///////////////////////////////////////////////////
+
 ctrl + o  
 enter
 ctrl + x
